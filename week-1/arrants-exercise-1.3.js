@@ -10,7 +10,7 @@
 ;              object. 
 */
 
-var header = require('../week-1/header');
+var header = require('../header');
 
 /*
  Expected output:
