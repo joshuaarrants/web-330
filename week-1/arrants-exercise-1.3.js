@@ -10,7 +10,7 @@
 ;              object. 
 */
 
-var header = require('../header.js');
+//var header = require('../header.js');
 
 /*
  Expected output:
@@ -31,8 +31,8 @@ var header = require('../header.js');
 // start program
 
 //output header
-console.log(header.display("Joshua", "Arrants", "Exercise 1.3"));
-console.log('\n');
+//console.log(header.display("Joshua", "Arrants", "Exercise 1.3"));
+//console.log('\n');
  
 function CellPhone (manufacturer, model, color, price) {
 
