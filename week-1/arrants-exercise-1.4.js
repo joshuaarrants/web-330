@@ -10,7 +10,7 @@
 ;              method. 
 */
 
-//var header = require('../header.js');
+var header = require('../week-1/header');
 
 /*
  Expected output:
@@ -33,8 +33,8 @@
 // start program
 
 //output header
-//console.log(header.display("Joshua", "Arrants", "Exercise 1.4"));
-//console.log('\n');
+console.log(header.display("Joshua", "Arrants", "Exercise 1.4"));
+console.log('\n');
 
 function Car (model) {
     this.model = model;
