@@ -1,0 +1,44 @@
+<!--
+============================================
+; Title: Exercise 4.2 
+; Author: Professor Krasso
+; Date: 20 August 2018
+; Modified By: Josh Arrants
+; Description: This html file demonstrates how 
+;              to use an http get resquest.
+;===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTTP GET AND POST OPERATIONS</title>
+
+    <!-- jQuery reference -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+    <h4>HTTP GET Request</h4>
+
+    <button id="get">Get Random Breed</button>
+
+<script>
+    //function that gets a random dog image from a website when a button is clicked
+    $(function() {
+        //click function that is assigned to a button
+        $("#get").click(function(){
+            //gets the data and status from the website inputted
+            $.get("https://dog.ceo/api/breeds/image/random", function(data, status){
+                //outputs the data and status in the console window
+                console.log("Data: " + JSON.stringify(data) + "\nStatus: " + status);
+            });
+        });
+    });
+
+</script>
+
+</body>
+</html>
