@@ -1,0 +1,55 @@
+<!--
+============================================
+; Title: Exercise 4.3
+; Author: Professor Krasso
+; Date: 20 August 2018
+; Modified By: Josh Arrants
+; Description: This html file demonstrates how
+;              to use the http delete request.
+;===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 4.3</title>
+
+    <!-- jQuery reference -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+    <h4>HTTP Delete Request</h4>
+
+    <button id="delete">Delete User</button>
+
+<script>
+    //function that deletes a user from
+    $(function() 
+    {
+        //click function that is assigned to a button
+        $("#delete").click(function()
+        {
+            //creates an ajax http delete request 
+            $.ajax(
+            {
+                url:"http://httpbin.org/delete",
+                dataType:"json",
+                type:"DELETE",
+                data: {username: "josh1234", password: "s3cr3et", email: "josharrants@hotmail.com"},
+                //call back function that gets the data and status of the request
+                success: function(data, status)
+                {
+                //outputs the data and status in the console window
+                console.log("Username: " + data.form.username + "\nPassword: " + data.form.password + "\nEmail: " + data.form.email + "\nStatus: " + status);
+                }
+            });
+        });
+    });
+
+</script>
+
+</body>
+</html>
