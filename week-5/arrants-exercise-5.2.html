@@ -1,0 +1,68 @@
+<!-- 
+============================================
+; Title: Exercise 5.2
+; Author: Professor Krasso
+; Date: 28 August 2018
+; Modified By: Joshua Arrants
+; Description: This program displays 
+; how to use the jQuery.proxy() method.
+;===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 5.2 - The Proxy Pattern</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- jquery Reference Library -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="" class="navbar-brand">Home</a>
+    </nav>
+
+    <br /><br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Proxy Pattern Example -->
+                <h2>Exercise 5.2 - Preview Proxy Example</h2>
+                <button class="btn-primary" id="btnPreviewProxy">Preview Proxy</button>
+                
+                <br />
+                <span id="spanProxyResults"></span>
+            </div>
+        </div>
+    </div>   
+   
+
+    <hr />
+
+   
+</div>
+
+<script>
+    $(function() {
+        // Proxy Pattern
+        var phone =  {
+            make: "Apple",
+            model: "iPhone X",
+            price: "$999",
+            //clear the span tag before adding new content
+            display: function() {
+                $("#spanProxyResults").html("");
+                $("#spanProxyResults").append("<br />Make: " + this.make + "<br />" + "Model: " + this.model + "<br />" + "Price: " +this.price);
+            }
+        };
+        $("#btnPreviewProxy").click($.proxy(phone, "display"));
+    });
+</script>
+
+
+
+</body>
+</html>
