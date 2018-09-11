@@ -1,0 +1,59 @@
+<!-- 
+============================================
+; Title: Exercise 7.3
+; Author: Professor Krasso
+; Date: 11 September 2018
+; Modified By: Joshua Arrants
+; Description: This program demonstrates
+;              how to use the foreach binding method.
+;===========================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Exercise 7.3</title>
+
+    <!-- Stylesheet - Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    <!-- JavaScript Libraries -->
+    <script src="../knockout-3.4.2.js"></script>
+</head>
+
+<body>
+    <div role="main" class="container">
+        <br/><br/>
+        <h2>The "foreach" binding</h2>
+        <table class="table table-dark table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: textbook">
+                <tr>
+                    <td data-bind="text: title"></td>
+                    <td data-bind="text: price"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br/>
+    </div>
+
+    <script>
+        function TextbookViewModel() {
+        this.textbook = ko.observableArray([
+            {title: "Web Design with HTML, CSS, JavaScript and jQuery Set", price: 52.27 },
+            {title: "Learning Web Development with Bootstrap and Angular - Second Edition", price: 49.99 },
+            {title: "Learning Web App Development: Build Quickly with Proven JavaScript Techniques", price: 11.97 }, 
+            {title: "Learning Web Design: A Beginner's Guide to HTML, CSS, JavaScript, and Web Graphics", price: 34.75 }]);
+        } ko.applyBindings(new TextbookViewModel());
+    </script>
+</body>
+<html>
